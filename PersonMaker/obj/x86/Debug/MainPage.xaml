@@ -1,0 +1,155 @@
+﻿<Page
+    x:Class="PersonMaker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PersonMaker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel Background="AliceBlue">
+                <TextBlock Text="SOCIAL LENZ" 
+                       Foreground="Blue"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"
+                       FontSize="30"
+                       Margin="20, 5 ,10, 10"/>
+                <TextBlock x:ConnectionId='1' x:Name="ThrottlingActive" 
+                           Text="Welcome to Augmented World of Social Media" 
+                           Foreground="Blue"
+                           FontWeight="Bold"
+                           FontSize="18"
+                           Margin="20, 0 ,10, 0"/>
+                
+                
+                
+                <StackPanel Background="AliceBlue">
+
+
+                    <TextBlock Text=" Click here to see if you are a Human/Robot."
+                    Margin="20, 5 ,10, 10"
+                    Foreground="Blue"
+                    TextWrapping="Wrap"/>
+                    <Button x:ConnectionId='15' x:Name="FetchPersonGroup"
+                    Margin="20, 5 ,10, 10"
+                    Content="Just KiddinG"
+                    Width="200"
+                    Height="30"                               
+                    />
+                    <TextBlock x:ConnectionId='16' x:Name="PersonGroupStatusTextBlock"
+                    Text="- Person Group status -"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    Width="600"
+                    TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='17' x:Name="PersonGroupCreateErrorText"
+                    Text=""
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    Width="600"
+                    TextWrapping="Wrap"
+                    Foreground="Red"/>
+                </StackPanel>
+
+                <StackPanel Background="AliceBlue">
+            
+                    <TextBox x:ConnectionId='8' x:Name="PersonNameTextBox"
+                    Width="600"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    PlaceholderText="Name" Text=""/>
+                    <TextBox x:ConnectionId='9' x:Name="PersonTwitterhandleTextBox"
+                    Width="600"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    PlaceholderText="Enter your twitter handle" Text=""/>
+                    <TextBox x:ConnectionId='10' x:Name="PersonInstagramhandleTextBox"
+                    Width="600"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    PlaceholderText="Enter your insta handle" Text=""/>
+
+
+
+                    <Button x:ConnectionId='11' x:Name="CreatePersonButton"
+                    Margin="20, 5 ,10, 10"
+                    Content="Create Account"
+                    Width="200"
+                    Height="30"
+                                                         />
+                    <TextBlock Text="To deactivate account"
+                     HorizontalAlignment="Left"
+                     Foreground="Blue"
+                     Margin="20, 5 ,10, 10"
+                     Width="600"
+                     TextWrapping="Wrap"/>
+                    <Button x:ConnectionId='12' x:Name="DeletePersonButton"
+                    Margin="20, 5 ,10, 10"
+                    Content="Deactivate Account "
+                    Width="200"
+                    Height="30"
+                                                         />
+                    <TextBlock x:ConnectionId='13' x:Name="PersonStatusTextBlock"
+                    Text="- Person status -"
+                    HorizontalAlignment="Left"
+                    Margin="20, 5 ,10, 10"
+                    Width="600"
+                    TextWrapping="Wrap"/>
+                    <TextBlock x:ConnectionId='14' x:Name="CreatePersonErrorText"
+                    Visibility="Collapsed" 
+                    Text="" 
+                    Margin="20, 5 ,10, 10" 
+                    Foreground="Red"/>
+                </StackPanel>
+
+                
+
+                <StackPanel Background="AliceBlue">
+                    <TextBlock Text=" Upload photos here (min 6)."
+                    Margin="20, 5 ,10, 10"
+                    Foreground="Blue"
+                    TextWrapping="Wrap"/>
+                    <Button x:ConnectionId='6' x:Name="CreateFolderButton"
+                    Margin="20, 5 ,10, 10"
+                    Content="Upload"
+                    Width="200"
+                    Height="30"
+                                                         />
+                    <TextBlock x:ConnectionId='7' x:Name="CreateFolderErrorText"
+                    Visibility="Collapsed" 
+                    Text="" 
+                    Margin="20, 5 ,10, 10" 
+                    Foreground="Red"/>
+                </StackPanel>
+
+                <StackPanel Background="AliceBlue">
+                    
+                    <Button x:ConnectionId='4' x:Name="SubmitToAzureButton"
+                    Margin="20, 5 ,10, 10"
+                    Content="Submit to our database"
+                    Width="200"
+                    Height="30"
+                                                          />
+                    <TextBlock x:ConnectionId='5' x:Name="SubmissionStatusTextBlock" Text="Submission Status: " 
+                       Margin="20, 5 ,10, 10"/>
+                </StackPanel>
+
+                <StackPanel Background="AliceBlue">
+                    <Button x:ConnectionId='2' x:Name="TrainButton"
+                    Margin="20, 5 ,10, 10"
+                    Content="Sign up / Log In"
+                    Width="200"
+                    Height="30"
+                                                  />
+                    <TextBlock x:ConnectionId='3' x:Name="TrainStatusTextBlock" Text="Submission Status: " 
+                       Margin="20, 5 ,10, 10"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
+
