@@ -6,7 +6,6 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.Storage;
 using Microsoft.ProjectOxford.Face;
-//using Microsoft.ProjectOxford.Face_edit;
 using Microsoft.ProjectOxford.Face.Contract;
 using Windows.System;
 using System.Diagnostics;
@@ -39,9 +38,7 @@ namespace PersonMaker
         string person_twitterId;
         string social_handle;
         StorageFolder personFolder;
-        // PersonInstagramhandleTextBox
         private FaceServiceClient faceServiceClient;
-        //private faceServiceCLIENT faceServiceClient;
         private PersonGroup knownGroup;
         private int minPhotos = 6;
 
@@ -67,10 +64,10 @@ namespace PersonMaker
         private async void CreatePersonGroupButton_ClickAsync(object sender, RoutedEventArgs e)
         {
 
-            personGroupId = "maketwitter"; //"1122";
-            personGroupName = "1122"; //"maketwitter";
+            personGroupId = "enter your group ID here"
+            personGroupName = "enter your group name";
             PersonGroupStatusTextBlock.Foreground = new SolidColorBrush(Colors.Black);
-            authKey = "69e550a6bafc449b8f90bb2c56e5d846";//"abbd309cfe8a4f8393713f14fefbfe42"; //"abbd309cfe8a4f8393713f14fefbfe42";//"69e550a6bafc449b8f90bb2c56e5d846";//AuthKeyTextBox.Text; ///Enter the authorization code for Azure Here.
+            authKey = "enter your azure key";
 
             if (string.IsNullOrWhiteSpace(personGroupId) == false  && string.IsNullOrWhiteSpace(authKey) == false) //&& string.IsNullOrWhiteSpace(personGroupName) == false
             {
@@ -120,10 +117,10 @@ namespace PersonMaker
 
         private async void FetchPersonGroup_Click(object sender, RoutedEventArgs e)
         {
-            personGroupId = "maketwitter"; //"1122";
-            personGroupName = "1122"; //"maketwitter";
+            personGroupId = "enter your group ID here"
+            personGroupName = "enter your group name";
             PersonGroupStatusTextBlock.Foreground = new SolidColorBrush(Colors.Black);
-            authKey = "69e550a6bafc449b8f90bb2c56e5d846"; //"abbd309cfe8a4f8393713f14fefbfe42"; ////AuthKeyTextBox.Text;
+            authKey = "enter your azure key";
 
             await ApiCallAllowed(true);
             faceServiceClient = new FaceServiceClient(authKey);
@@ -147,16 +144,6 @@ namespace PersonMaker
                     PersonGroupStatusTextBlock.Text = "Could not find group. Make sure that you have entered the proper group name ";// + knownGroup.Name;
                 }
                 PersonGroupStatusTextBlock.Foreground = new SolidColorBrush(Colors.Green);
-                /*
-                if (PersonGroupStatusTextBlock.Text.ToLower().Contains("please"))
-                {
-                    PersonGroupStatusTextBlock.Foreground = new SolidColorBrush(Colors.Green);
-                }
-                else
-                {
-                    PersonGroupStatusTextBlock.Foreground = new SolidColorBrush(Colors.Red);
-                }
-                */
             }
         }
 
@@ -194,54 +181,7 @@ namespace PersonMaker
                     {
                         personId = result.PersonId;
 
-                        //PersonStatusTextBlock.Text = "Created new account" + result.PersonId;
-
-                        ///
-                        /*
-                        try
-                        {
-                            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                            builder.DataSource = "sociallens-cs538.database.windows.net";
-                            builder.UserID = "sociallens";
-                            builder.Password = "Password!12";
-                            builder.InitialCatalog = "SocialLens";
-                            SqlConnection connection1 = new SqlConnection(builder.ConnectionString);
-                            
-                            PersonStatusTextBlock.Text = "hello "+connection1.State.ToString();
-                            
-                            //using ()
-                            {
-                                //Console.WriteLine("\nQuery data example:");
-                                //Console.WriteLine("=========================================\n");
-                                connection1.Open();
-                                //connection.Open();
-                                StringBuilder sb = new StringBuilder();
-                                sb.Append("insert into persons values('"+result.PersonId+ "','"+ personName+"','" +person_facebookId+ "','"+person_facebookId+"','"+person_facebookId+ "','" + person_facebookId + "'); ");
-                                String sql = sb.ToString();
-                                
-                                using (SqlCommand command = new SqlCommand(sql, connection1))
-                                {
-                                    using (SqlDataReader reader = command.ExecuteReader())
-                                    {
-                                        while (reader.Read())
-                                        {
-                                            //Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
-                                        }
-                                    }
-                                }
-                                
-                            }
                         
-                        }
-                        
-                        catch (SqlException ee)
-                        {
-                            PersonStatusTextBlock.Text = ee.ToString();//"Created new account" + result.PersonId;//Console.WriteLine(e.ToString());
-                        }
-                        //Console.ReadLine()
-
-                        */
-                        ///
                         PersonStatusTextBlock.Text = "Created new account" + result.PersonId;
 
                         PersonStatusTextBlock.Foreground = new SolidColorBrush(Colors.Green);
